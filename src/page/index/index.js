@@ -5,5 +5,5 @@
 
 require('./index.css')
 console.log('Hello  page/index');
-$('body').html('HELLO INDEX~~~~~~~~~~~~~~~~~~~~');
+// $('body').html('HELLO INDEX~~~~~~~~~~~~~~~~~~~~');
 // $('body').css('background-color','red');

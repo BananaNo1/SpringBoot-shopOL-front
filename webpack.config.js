@@ -4,6 +4,8 @@ var webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin    = require('html-webpack-plugin');
 
+var WEBPACK_ENV         = process.env.WEBPACK_ENV || 'dev';
+
 var getHtmlConfig = function(name){
   return {
     template  : './src/view/'+name+'.html',
@@ -23,6 +25,7 @@ var config = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath : '/dist',
     filename: 'js/[name].js'
   },
   externals :{
