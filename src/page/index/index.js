@@ -1,9 +1,14 @@
 
- 
- // var $$ = require('jquery');
-// $('body').html('HELLO INDEX');
 
-require('./index.css')
-console.log('Hello  page/index');
-// $('body').html('HELLO INDEX~~~~~~~~~~~~~~~~~~~~');
-// $('body').css('background-color','red');
+var _mm = require('util/mm.js');
+
+_mm.request({
+		url : 'http://localhost:8070/user/getUserInfo',
+		success : function(res){
+			console.log(res);
+		},
+		error   : function(errMsg){
+			console.log(errMsg);
+		}
+
+});
