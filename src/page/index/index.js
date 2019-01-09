@@ -1,14 +1,4 @@
 
 
+require('page/common/nav/index.js');
 var _mm = require('util/mm.js');
-
-_mm.request({
-		url : 'http://localhost:8070/user/getUserInfo',
-		success : function(res){
-			console.log(res);
-		},
-		error   : function(errMsg){
-			console.log(errMsg);
-		}
-
-});

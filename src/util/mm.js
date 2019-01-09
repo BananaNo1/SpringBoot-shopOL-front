@@ -2,9 +2,10 @@
 * @Author: lei
 * @Date:   2019-01-08 11:45:41
 * @Last Modified by:   lei
-* @Last Modified time: 2019-01-08 17:24:06
+* @Last Modified time: 2019-01-09 10:22:28
 */
 
+var Hogan = require('hogan.js');	
 var config = {
 	serverHost : ''
 }
@@ -33,16 +34,41 @@ var _mm = {
 		});
 	},
 	getServerUrl : function(path){
-		return config.serverHost+path;
+			return config.serverHost+path;
 	},
 	getUrlParam : function(name){
-		var reg    = 	new RegExp('(^|&)'+name+'=([^&]*)(&|$)');
-		var result =    window.location.search.substr(1).match(reg);
-		return result ? decodeURIComponent(result[2]) : null;
+			var reg    = 	new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+			var result =    window.location.search.substr(1).match(reg);
+			return result ? decodeURIComponent(result[2]) : null;
 	},
-	doLogin 	:  function(){
+	doLogin 	:  	function(){
 			window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
-	}
+	},
+	goHome		: 	function(){
+			window.location.href = './index.html';
+	},
+	renderHtml : 	function(htmlTemplate,data){
+			var template = Hogan.compile(htmlTemplate);
+		 	result = template.render(data);
+			return result;
+	},
+	successTips : 	function(msg){
+			alert(msg || '操作成功');
+	},
+	errorTips   : 	function(msg){
+			alert(msg || '失败');
+	},
+	validate 	: 	function(type,value){
+		if('require' === type){
+				return !!value;
+		}
+		if('phone'  === type){
+				return /^1\d{10}&/.test(value);
+		}
+		if('email'  === type){
+				return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
+		}
+	},
 
 };
 
