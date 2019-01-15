@@ -3,17 +3,20 @@
 
 <head>
     <%=require('html-loader!./layout/head-common.html') %>
-        <title>商城</title>
+    <title><%= htmlWebpackPlugin.options.title%> - 商城</title>
 </head>
 
 <body>
-    <!-- <%=require('html-loader!./layout/nav-simple.html')%> -->
-       <%=require('html-loader!./layout/nav.html')%>
-        <!--  <div class="banner-con">
-                <div class="loading"></div>
-            </div> -->
-        <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-        <span class="sr-only">Loading...</span>
+       <%=require('html-loader!./layout/nav.html')%> 
+       <%=require('html-loader!./layout/header.html')%>
+       <div class="page-wrap w">
+       		<%=require('html-loader!./layout/nav-side.html')%> 
+       		<div class="content with-nav">test</div>
+       </div>
+       
+
+  <!--       <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+        <span class="sr-only">Loading...</span> -->
         <%=require('html-loader!./layout/footer.html')%>
 </body>
 

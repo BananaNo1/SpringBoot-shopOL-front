@@ -6,22 +6,25 @@ var ExtractTextPlugin   = require('extract-text-webpack-plugin');
 
 var WEBPACK_ENV            = process.env.WEBPACK_ENV || 'dev';
 
-var getHtmlConfig = function(name){
+var getHtmlConfig = function(name,title){
     return {
       template  : './src/view/'+name+'.html',
-      filename: 'view/'+name+'.html',
-      inject:   true,
-      hash:     true,
-      chunks:   ['common',name]
+      filename  : 'view/'+name+'.html',
+      title     :   title,
+      inject    :   true,
+      hash      :   true,
+      chunks    :   ['common',name]
     };
 };
 
 var config = {
     mode: "development",
     entry: {
-      'common' : ['./src/page/common/index.js'],
-      'index' : ['./src/page/index/index.js'],
-      'login' : ['./src/page/login/index.js'],
+      'common'        : ['./src/page/common/index.js'],
+      'index'         : ['./src/page/index/index.js'],
+      'user-login'    : ['./src/page/user-login/index.js'],
+      'result'        : ['./src/page/result/index.js'],
+      'user-register' : ['./src/page/user-register/index.js'],
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -49,6 +52,7 @@ var config = {
                   use: "css-loader"
               })
               },
+              { test: /\.string$/, loader: 'html-loader'},
               { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
             /* {
                   test: /\.css$/,
@@ -64,8 +68,10 @@ var config = {
     plugins : [
               new ExtractTextPlugin("css/[name].css"),
              // new MiniCssExtractPlugin({filename: "css/[name].css"}),
-              new HtmlWebpackPlugin(getHtmlConfig('index')),
-              new HtmlWebpackPlugin(getHtmlConfig('login')),
+              new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+              new HtmlWebpackPlugin(getHtmlConfig('user-login','登录')),
+              new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
+              new HtmlWebpackPlugin(getHtmlConfig('user-register','账号注册')),
            
     ],
     optimization: {
