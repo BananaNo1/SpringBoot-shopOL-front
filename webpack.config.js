@@ -27,6 +27,10 @@ var config = {
       'user-register' : ['./src/page/user-register/index.js'],
       'user-center'   : ['./src/page/user-center/index.js'],
       'user-pass-reset':['./src/page/user-pass-reset/index.js'],
+      'user-pass-update':['./src/page/user-pass-update/index.js'],
+      'user-center-update':['./src/page/user-center-update/index.js'],
+      'user-register-info':['./src/page/user-register-info/index.js'],
+      'validate-code' : ['./src/page/validate-code/index.js'],
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -76,7 +80,10 @@ var config = {
               new HtmlWebpackPlugin(getHtmlConfig('user-register','账号注册')),
               new HtmlWebpackPlugin(getHtmlConfig('user-center','个人中心')),
               new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),
-           
+              new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
+              new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
+              new HtmlWebpackPlugin(getHtmlConfig('validate-code','验证')),
+              new HtmlWebpackPlugin(getHtmlConfig('user-register-info','注册用户信息')),
     ],
     optimization: {
             splitChunks : {
@@ -86,7 +93,7 @@ var config = {
                   chunks : 'initial',
                   minChunks : 2,
               },
-              // styles: {
+              // styles: 
               //   name: styles,
               //   test: /\.(scss|css)$/,
               //   chunks: 'all',

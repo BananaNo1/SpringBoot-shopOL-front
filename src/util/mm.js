@@ -2,7 +2,7 @@
 * @Author: lei
 * @Date:   2019-01-08 11:45:41
 * @Last Modified by:   lei
-* @Last Modified time: 2019-01-15 11:15:08
+* @Last Modified time: 2019-01-25 10:49:17
 */
 
 var Hogan = require('hogan.js');	
@@ -26,9 +26,8 @@ var _mm = {
 					}else if(  1  === res.status){
 						 typeof param.error === 'function'	&& param.error(res.msg);
 					}
-
 			},
-			error		:function(err){
+			error		: function(err){
 						 typeof param.error === 'function' && param.error(err.statusText);
 			}
 		});

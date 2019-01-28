@@ -1,0 +1,26 @@
+/*
+* @Author: lei
+* @Date:   2019-01-09 17:48:51
+* @Last Modified by:   lei
+* @Last Modified time: 2019-01-09 17:52:47
+*/
+
+.footer{
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+
+.footer .links{
+	text-align: center;
+	color: #666;
+	line-height: 30px;
+}
+
+.footer .links .link{
+	padding: 0 10px;
+}
+.footer .copyright{
+	text-align: center;
+	color: #666;
+	line-height: 30px;
+}

@@ -1,0 +1,29 @@
+/*
+* @Author: lei
+* @Date:   2019-01-10 14:00:56
+* @Last Modified by:   lei
+* @Last Modified time: 2019-01-15 17:04:32
+*/
+.nav-side{
+	float: left;
+	width: 130px;
+	min-height: 100px;
+}
+
+.nav-side .nav-item{
+	line-height: 25px;
+	font-size: 13px;
+}
+
+.nav-side .nav-item .link{
+	color: #888;
+}
+
+.nav-side .nav-item.active .link{
+	color: #c60023;
+}
+
+.content.with-nav{
+    float: right;
+    width: 950px;
+}

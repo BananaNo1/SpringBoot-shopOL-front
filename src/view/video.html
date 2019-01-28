@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    .hide {
+        display: none;
+    }
+    
+    .video {
+        width: 600px;
+        height: 400px;
+        border: 2px solid red;
+        margin: 50px auto;
+        position: relative;
+    }
+    
+    .video video {
+        display: block;
+    }
+    
+    .skip {
+        display: block;
+        width: 300px;
+        height: 200px;
+        background: url('../image/icon/loading.gif');
+        z-index: 9999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -150px;
+        cursor: pointer;
+        background-size: cover;
+    }
+    
+    .toggle-btn {
+        display: block;
+        width: 70px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 10px;
+        border: 2px solid #317ef3;
+        color: #317ef3;
+        position: absolute;
+        bottom: 38px;
+        right: 10px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        font-size: 12px;
+    }
+    
+    .toggle-btn:hover,
+    .skip-adver:hover {
+        background-color: #317ef3;
+        color: #fff;
+    }
+    
+    .skip-adver {
+        display: block;
+        width: 70px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 10px;
+        border: 2px solid #317ef3;
+        color: #317ef3;
+        position: absolute;
+        top: 38px;
+        right: 10px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        font-size: 12px;
+    }
+    
+    .hide {
+        display: none !important;
+    }
+    
+    .countdown {
+        display: block;
+        width: 100px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 10px;
+        border: 2px solid #317ef3;
+        color: #fff;
+        position: absolute;
+        top: 38px;
+        right: 120px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 12px;
+        background: #317ef3;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="video">
+        <video src="C:\Users\aisino\Documents\WeChat Files\babalei999\Video\fe37ec9ba399960b813d0c382a2e841b.mp4" id="media" controls="controls" width="600" height="400">
+            不支持
+        </video>
+        <a href="http://www.baidu.com" target="_blank" class="skip"></a>
+        <!-- 倒计时 -->
+        <a class="countdown">广告剩余<span></span>秒</a>
+        <!-- 跳过广告 -->
+        <a class="skip-adver">跳过广告</a>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+    <script type="text/javascript">
+		//定义广告结束播放视频的函数
+		function playVideo(){
+			$('.countdown').addClass('hide');
+			$('.skip-adver').addClass('hide');
+			$('.toggle-btn').removeClass('hide');
+        	$("#media").attr("src","C:\\Users\\aisino\\Documents\\WeChat Files\\babalei999\\Video\\fe37ec9ba399960b813d0c382a2e841b.mp4").attr("autoplay","true");
+
+		}
+		//设置倒计时
+		window.onload=function(){
+			//获取广告的总时长
+			var video=document.getElementById("media");
+				//videoTime=Math.floor(video.duration);
+				videoTime = 60;
+				$('.countdown span').html(videoTime);
+			setInterval(function(){
+				videoTime--;
+				$('.countdown span').html(videoTime);
+				if(videoTime == 0){
+					playVideo();
+				}
+			},1000)
+		}
+		//跳过广告
+		$('.skip-adver').click(function(){
+			playVideo();
+        })
+		//控制广告图片的显示和隐藏
+		//$('.skip').hide();
+		var myVideo=document.getElementById("media");
+		myVideo.addEventListener('play',function(){
+			$('.skip').hide();   
+		});
+		myVideo.addEventListener('pause',function(){
+			$('.skip').show();
+		})
+        $('.toggle-btn').click(function(){
+        	toggleVideo(myVideo);
+        })
+	</script>
+</body>
+
+</html>
