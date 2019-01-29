@@ -2,7 +2,7 @@
 * @Author: lei
 * @Date:   2019-01-09 17:25:54
 * @Last Modified by:   lei
-* @Last Modified time: 2019-01-11 14:26:23
+* @Last Modified time: 2019-01-29 16:30:08
 */
 
 
@@ -15,6 +15,8 @@ var _cart = require('service/cart-service.js');
 var nav = {
 	init : function(){
 		this.bindEvent();
+		this.localUserInfo();
+		// this.loadCartCount();
 		return this;
 	},
 	bindEvent : function(){
@@ -34,7 +36,7 @@ var nav = {
 	},
 	localUserInfo : function(){
 			_user.checkLogin(function(res){
-				$('.user .not-login').hide().siblings('.user .login').show()
+				$('.user.not-login').hide().siblings('.user.login').show()
 				.find('.username').text(res.username);
 			},function(errMsg){
 

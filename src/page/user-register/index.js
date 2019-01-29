@@ -2,7 +2,7 @@
  * @Author: lei
  * @Date:   2019-01-14 16:13:41
  * @Last Modified by:   lei
- * @Last Modified time: 2019-01-25 16:59:24
+ * @Last Modified time: 2019-01-28 10:03:32
  */
 
 require('./index.css');
@@ -25,9 +25,9 @@ var page = {
         this.onLoad();
         this.bindEvent();
     },
-    onLoad : function(){
+    onLoad: function() {
         $('#validate').show()
-        .siblings('#info').hide();
+            .siblings('#info').hide();
     },
     bindEvent: function() {
         var _this = this;
@@ -38,28 +38,30 @@ var page = {
             if (!username) {
                 return;
             }
-
-            _user.checkEmail(username,function(res){
-                    formError.hide();
-            },function(errMsg){
-                    formError.show(errMsg)
+            _user.checkEmail(username, function(res) {
+                formError.hide();
+            }, function(errMsg) {
+                formError.show(errMsg)
             });
         });
 
-        
+
         $('#send').click(function() {
             var email = $.trim($('#email').val());
             if (email == null) {
                 formError.show("邮箱不能为空");
+            } else if (!_mm.validate('email', email)) {
+                formError.show("邮箱格式不正确");
             } else {
-                if (!_mm.validate('email', email)) {
-                    formError.show("邮箱格式不正确");
+                var msg = $.trim($('.err-msg').text());
+                if (msg) {
+                    return;
                 } else {
                     $('#send').hide();
                     $('#time').show();
                     _this.timeCount();
                     var send = {
-                        email : email
+                        email: email
                     }
                     _this.sendEmail(send);
                 }
@@ -91,7 +93,7 @@ var page = {
 
         if (validateResult.status) {
             _user.checkVerify(formData, function(res) {
-                window.location.href = './user-register-info.html?res='+encodeURIComponent(res);
+                window.location.href = './user-register-info.html?res=' + encodeURIComponent(res);
             }, function(errMsg) {
                 formError.show(errMsg);
             });
@@ -129,9 +131,9 @@ var page = {
             result.msg = '邮箱格式不正确';
             return result;
         }
-        if(!_mm.validate('require',formData.verify)){
-             result.msg = '验证码不能为空';
-             return result;
+        if (!_mm.validate('require', formData.verify)) {
+            result.msg = '验证码不能为空';
+            return result;
         }
         result.status = true;
         result.msg = '验证通过';
@@ -141,7 +143,7 @@ var page = {
         _mm.request({
             url: _mm.getServerUrl('/sendEmail'),
             data: send,
-            method  :   'POST'
+            method: 'POST'
         });
     },
     timeCount: function() {
@@ -161,7 +163,7 @@ var page = {
             clearInterval(set);
         }, 60000);
     },
-    
+
 };
 
 $(function() {

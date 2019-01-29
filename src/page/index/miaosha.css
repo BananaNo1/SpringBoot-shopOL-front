@@ -1,0 +1,387 @@
+/*
+* @Author: lei
+* @Date:   2019-01-28 16:07:33
+* @Last Modified by:   lei
+* @Last Modified time: 2019-01-28 16:22:20
+*/
+
+.sk {
+    height: 275px;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    width: 1080px;
+    padding-top: 10px;
+
+}
+
+.sk_inner {
+    background: #f6f6f6;
+    overflow: hidden;
+}
+
+.sk_hd {
+    position: relative;
+    float: left;
+    width: 190px;
+    height: 275px;
+    background: #e83632;
+    color: #fff;
+}
+
+.sk_hd_lk {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.sk_hd_lk:hover {
+    color: #fff;
+}
+
+.sk_tit {
+    position: absolute;
+    /* font-family: 'fzzxh'; */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    top: 42px;
+    /* font-size: 36px; */
+    font-size: 34px;
+}
+
+.sk_subtit {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    top: 90px;
+    /* color: #edac8e; */
+    color: #f19999;
+    color: rgba(255, 255, 255, 0.5);
+    /* font-size: 24px; */
+    font-size: 20px;
+}
+
+.sk_ico {
+    position: absolute;
+    left: 86px;
+    top: 126px;
+    display: block;
+    width: 20px;
+    height: 33px;
+    background-image: url(//misc.360buyimg.com/mtd/pc/index_2017/2.1.0/static/images/sprite.seckill.png);
+    background-position: -35px -25px;
+}
+
+.sk_desc {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    top: 170px;
+    font-size: 16px;
+}
+
+.sk_cd {
+    position: absolute;
+    top: 212px;
+    left: 30px;
+    height: 40px;
+}
+
+.sk .cd_day {
+    display: none;
+}
+
+.sk .cd_item {
+    position: relative;
+    float: left;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: #2f3430;
+    margin-right: 5px;
+}
+
+.sk .cd_item:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    height: 1px;
+    background: #e83632;
+}
+
+.sk .cd_item_txt {
+    position: relative;
+    line-height: 40px;
+    font-weight: bold;
+    /* font-size: 16px; */
+    font-size: 20px;
+}
+
+
+/* list */
+
+.sk_list {
+    position: relative;
+    float: left;
+    width: 799px;
+    border-right: solid 1px #f0f0f0;
+    height: 275px;
+    overflow: hidden;
+}
+
+.sk_list_inner {
+    position: relative;
+    width: 800px;
+    height: 275px;
+}
+
+.sk_item {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 275px;
+}
+
+.sk_item:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 275px;
+    background: #f0f0f0;
+}
+
+.sk_item_lk {
+    position: relative;
+    display: block;
+    width: 190px;
+    height: 275px;
+    text-align: center;
+    margin: auto;
+}
+
+
+/* todo */
+
+.sk_item_tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 40px;
+    background-image: url(//misc.360buyimg.com/mtd/pc/index_2017/2.1.0/static/images/sprite.seckill.png);
+    background-position: 0 -25px;
+    text-align: center;
+    z-index: 1;
+}
+
+.sk_item_tag_txt {
+    font-size: 12px;
+    color: #fff;
+    line-height: 14px;
+    display: inline-block;
+    vertical-align: 2px;
+    padding-top: 2px;
+}
+
+.sk_operate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+}
+
+.sk_operate_item {
+    width: 30px;
+    height: 28px;
+    border-left: solid 1px #f0f0f0;
+    border-bottom: solid 1px #f0f0f0;
+    cursor: pointer;
+}
+
+.sk_operate_item_ico {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* .sk_operate_item_cart .sk_operate_item_ico {
+  display: block;
+  position: relative;
+  left: 9px;
+  top: 9px;
+  background: url(images/sk_item_ico_cart.png?__sprite=sk);
+}
+
+.sk_operate_item_like .sk_operate_item_ico {
+  display: block;
+  position: relative;
+  left: 9px;
+  top: 9px;
+  background: url(images/sk_item_ico_like.png?__sprite=sk);
+}
+
+.sk_operate_item_more .sk_operate_item_ico {
+  display: block;
+  position: relative;
+  left: 9px;
+  top: 9px;
+  background: url(images/sk_item_ico_more.png?__sprite=sk);
+} */
+
+.sk_item_img {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    left: 50%;
+    margin-left: -70px;
+    top: 40px;
+    -webkit-transition: opacity ease 0.2s;
+    -o-transition: opacity ease 0.2s;
+    -moz-transition: opacity ease 0.2s;
+    transition: opacity ease 0.2s;
+}
+
+.slider_item:hover .sk_item_img {
+    opacity: 0.8;
+}
+
+.sk_item_shadow {
+    position: absolute;
+    display: block;
+    top: 160px;
+    left: 15px;
+    width: 170px;
+    height: 20px;
+    background-image: url(//misc.360buyimg.com/mtd/pc/index_2017/2.1.0/static/images/sprite.seckill.png);
+    background-position: 0 0;
+}
+
+.sk_item_name {
+    position: absolute;
+    top: 190px;
+    left: 0;
+    width: 160px;
+    padding: 0 15px;
+    line-height: 30px;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sk_item_price {
+    position: absolute;
+    left: 15px;
+    top: 230px;
+    width: 160px;
+    height: 20px;
+    padding: 1px;
+    background: #e6382f;
+    line-height: 20px;
+}
+
+.sk_item_price_new {
+    float: left;
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.sk_item_price_origin {
+    float: left;
+    width: 80px;
+    height: 20px;
+    background: #fff;
+    text-align: center;
+    color: #b7bcb8;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.sk_item_price_isnew {
+    text-decoration: none;
+}
+
+.sk_chn {
+    position: relative;
+    float: left;
+    width: 180px;
+    height: 260px;
+    padding: 8px 10px 7px;
+}
+
+.sk_chn_inner {
+    width: 100%;
+    height: 100%;
+}
+
+.sk_chn_lk {
+    display: block;
+    width: 180px;
+}
+
+.sk_chn_img {
+    width: 180px;
+    height: 260px;
+}
+
+.sk_chn .slider_indicators {
+    bottom: 16px;
+}
+
+.sk_chn .slider_indicators_btn {
+    background: #c0c0c0;
+    width: 6px;
+    height: 6px;
+    margin: 4px;
+}
+
+.sk_chn .slider_indicators_btn:after {
+    content: none;
+}
+
+.sk_chn .slider_indicators_btn_active {
+    background: #e33333;
+}
+
+.sk_bd {
+    float: left;
+}
+
+.o2_mini .sk_list {
+    width: 598px;
+}
+
+.o2_mini .sk_list_inner {
+    width: 599px;
+}
+
+.sk .slider_control {
+    top: 110px;
+    /* opacity: 0; */
+}
+
+
+/* @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 1.5) {
+  .sk_ico {
+    background-image: url(//misc.360buyimg.com/mtd/pc/index_2017/2.1.0/static/images/sprite.seckill@2x.png);
+    background-position: -32.5px 0;
+    -moz-background-size: 52.5px 40px;
+         background-size: 52.5px 40px; }
+  .sk_item_tag {
+    background-image: url(//misc.360buyimg.com/mtd/pc/index_2017/2.1.0/static/images/sprite.seckill@2x.png);
+    background-position: 0 0;
+    -moz-background-size: 52.5px 40px;
+         background-size: 52.5px 40px; } } */

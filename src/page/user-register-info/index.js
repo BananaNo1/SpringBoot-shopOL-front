@@ -2,7 +2,7 @@
 * @Author: lei
 * @Date:   2019-01-25 14:48:53
 * @Last Modified by:   lei
-* @Last Modified time: 2019-01-25 17:04:02
+* @Last Modified time: 2019-01-28 10:06:05
 */
 require('./index.css');
 require('page/common/nav-simple/index.js');
@@ -41,7 +41,7 @@ var page = {
 		userInfo.email = email;
 		if(validataResult.status){
 				_user.register(userInfo,function(res){
-					window.location.href = './result?type=register';
+					window.location.href = './result.html?type=register';
 				},function(errMsg){
 					formError.show(errMsg);
 				});

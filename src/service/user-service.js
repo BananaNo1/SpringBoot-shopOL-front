@@ -2,7 +2,7 @@
 * @Author: lei
 * @Date:   2019-01-10 10:05:54
 * @Last Modified by:   lei
-* @Last Modified time: 2019-01-25 15:12:41
+* @Last Modified time: 2019-01-29 17:30:48
 */
 
 var _mm = require('util/mm.js');
@@ -15,6 +15,14 @@ var _user = {
 				method  : 	'POST',
 				success : 	resolve,
 				error   :   reject
+			});
+		},
+		logout : function(resolve,reject){
+			_mm.request({
+				url		: 	_mm.getServerUrl('/user/logout'),
+				method  : 'POST',
+				success : resolve,
+				error   : reject
 			});
 		},
 		// checkUsername : function(username,resolve,reject){
@@ -75,6 +83,14 @@ var _user = {
 					success     : resolve,
 					error 		: reject
 				});
+		},
+		checkLogin : function(resolve,reject){
+			_mm.request({
+				url : _mm.getServerUrl('/user/getUserInfo'),
+				method : 'POST',
+				success : resolve,
+				error : reject
+			});
 		}
 		
 };

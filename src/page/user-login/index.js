@@ -2,7 +2,7 @@
  * @Author: ManMan
  * @Date:   2019-01-05 21:00:33
  * @Last Modified by:   lei
- * @Last Modified time: 2019-01-23 15:24:07
+ * @Last Modified time: 2019-01-28 10:14:52
  */
 
 require('./index.css');
@@ -42,7 +42,7 @@ var page = {
     },
     submit: function() {
         var formData = {
-                username: $.trim($('#username').val()),
+                email: $.trim($('#username').val()),
                 password: $.trim($('#password').val()),
                 verifyCode:$.trim($('#code').val()),
             },
@@ -62,7 +62,7 @@ var page = {
             status: false,
             msg: ''
         };
-        if (!_mm.validate('require', formData.username)) {
+        if (!_mm.validate('require', formData.email)) {
             result.msg = '用户名不能为空';
             return result;
         }

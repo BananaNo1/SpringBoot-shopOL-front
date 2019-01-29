@@ -3,21 +3,115 @@
 
 <head>
     <%=require('html-loader!./layout/head-common.html') %>
-    <title><%= htmlWebpackPlugin.options.title%> - 商城</title>
+        <title>
+            <%= htmlWebpackPlugin.options.title%> - 商城</title>
 </head>
 
 <body>
-       <%=require('html-loader!./layout/nav.html')%> 
-       <%=require('html-loader!./layout/header.html')%>
-       <div class="page-wrap w">
-       		<%=require('html-loader!./layout/nav-side.html')%> 
-       		<div class="content with-nav">test</div>
-       </div>
-       
+    <%=require('html-loader!./layout/nav.html')%>
+        <%=require('html-loader!./layout/header.html')%>
+            <div class="w">
+                <ul class="keywords-list">
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=手机">手机</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=数码">数码</a>
+                    </li>
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=电脑">电脑</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=办公配件">办公配件</a>
+                    </li>
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=电视">电视</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=空调">空调</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=冰箱">冰箱</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=洗衣机">洗衣机</a>
+                    </li>
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=厨卫家电">厨卫家电</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=小家电">小家电</a>
+                    </li>
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=家具">家具</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=家具">家具</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=家装">家装</a>
+                    </li>
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=厨卫家电">厨卫家电</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=小家电">小家电</a>
+                    </li>
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=个护化妆">个护化妆</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=清洁用品">清洁用品</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=纸品">纸品</a>
+                    </li>
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=母婴用品">母婴用品</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=儿童玩具">儿童玩具</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=童装童鞋">童装童鞋</a>
+                    </li>
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=鞋靴">鞋靴</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=箱包">箱包</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=钟表">钟表</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=珠宝">珠宝</a>
+                    </li>
+                    <li class="keywords-item">
+                        <a class="link" target="_blank" href="./list.html?keyword=图书">图书</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=音像">音像</a>
+                        <a class="link" target="_blank" href="./list.html?keyword=电子书">电子书</a>
+                    </li>
+                </ul>
+                <div class="banner-con">
+                    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <div class="sk" id="J_seckill">
+                <div class="grid_c1 sk_inner">
+                    <div class="sk_hd">
+                        <a class="sk_hd_lk" href="#" target="_blank" clstag="h|keycount|core|seckill_a">
+                            <div class="sk_tit">秒杀专场</div>
+                            <div class="sk_subtit">FLASH DEALS</div><i class="sk_ico"></i>
+                            <div class="sk_desc">本场距离结束还剩</div>
+                            <div class="sk_cd">
+                                <div class="cd">
+                                    <div class="cd_item cd_day"><span class="cd_item_txt">00</span></div>
+                                    <div class="cd_item cd_hour"><span class="cd_item_txt">00</span></div>
+                                    <div class="cd_item cd_minute"><span class="cd_item_txt">00</span></div>
+                                    <div class="cd_item cd_second"><span class="cd_item_txt">00</span></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sk_bd">
+                        <div class="sk_list">
+                            <div class="slider sk_list_inner">
+                                <div class="slider_list" style="overflow: hidden;">
+                                    <div class="slider_wrapper" style="transition: none 0s ease 0s;">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <!--       <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-        <span class="sr-only">Loading...</span> -->
-        <%=require('html-loader!./layout/footer.html')%>
+            <div class="w">
+                <div class="floor-wrap">
+                 <h1 class="floor-title">F1 家用电器</h1>
+                  <ul class="floor-list">
+                    <li class="floor-item">
+                        <a href="./list.html?categoryId=100006">
+                            <span class="floor-text">双开门冰箱</span>
+                            <img class="floor-img" src="" alt="双开门冰箱" />
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <!--        -->
+            <%=require('html-loader!./layout/footer.html')%>
 </body>
 
 </html>
