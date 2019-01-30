@@ -2,7 +2,7 @@
  * @Author: lei
  * @Date:   2019-01-24 11:31:43
  * @Last Modified by:   lei
- * @Last Modified time: 2019-01-24 17:47:20
+ * @Last Modified time: 2019-01-30 16:23:07
  */
 require("./index.css");
 require('page/common/nav/index.js');
@@ -39,10 +39,12 @@ var page = {
                 }, function(res, msg) {
                     _mm.successTips(msg);
                 }, function(errMsg) {
-                    _mm.errorTips(errMsg);
+                    // _mm.errorTips(errMsg);
+                    $('.error').html(errMsg);
                 });
             } else {
-                _mm.errorTips(validateResult.msg);
+               // _mm.errorTips(validateResult.msg);
+               $('.error').html(validateResult.msg);
             }
         });
     },
@@ -53,6 +55,10 @@ var page = {
         };
         if (!_mm.validate('require', formData.password)) {
             result.msg = '原密码不能为空';
+            return result;
+        }
+        if(!formData.passwordNew  || formData.passwordNew.length < 6){
+            result.msg = '密码长度不能小于6位';
             return result;
         }
         if (formData.passwordNew !== formData.passwordConfirm) {
