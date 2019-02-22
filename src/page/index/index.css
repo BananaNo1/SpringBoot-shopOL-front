@@ -2,7 +2,7 @@
 * @Author: ManMan
 * @Date:   2019-01-05 22:45:45
 * @Last Modified by:   lei
-* @Last Modified time: 2019-01-29 15:36:36
+* @Last Modified time: 2019-02-21 16:25:18
 */
 
 .keywords-list{
@@ -17,9 +17,9 @@
 
 .keywords-list .keywords-item{
 	padding-left: 10px;
-	height: 35px;
+	height: 45px;
 	line-height: 35px;
-	font-size: 14px;
+	font-size: 12px;
 }
 
 .keywords-list .keywords-item:hover{
@@ -109,9 +109,11 @@
     overflow: hidden;
 }
 .floor-wrap .floor-list .floor-item{
+	white-space:nowrap;
+	overflow: hidden;
     position: relative;
-    width: 200px;
-    height: 220px;
+    width: 250px;
+    height: 300px;
     margin: 15px 20px 15px 0;
     float: left;
     cursor: pointer;
@@ -128,10 +130,10 @@
     color: #555;
 }
 .floor-wrap .floor-list .floor-item .floor-img{
-    position: absolute;
+    /* position: absolute;
     right: 15px;
-    bottom: 10px;
-    width: 80%;
-    height: 75%;
-    border: none;
+    bottom: 10px; */
+    width: 220px;
+    height: 220px;
+   /*  border: none; */
 }

@@ -7,12 +7,15 @@ var navSide = require('page/common/nav-side/index.js');
 var templateBanner = require('./banner.string');
 var _mm = require('util/mm.js');
 var templateSeckill = require('./miaosha.string');
+var templateTv = require('./index.string');
+var _product        = require('service/product-service.js');
 
 var page = {
     init: function() {
         this.slider();
         this.countDown();
         this.renderSeckill();
+        this.loadTv();
     },
     slider: function() {
         var bannerHtml = _mm.renderHtml(templateBanner);
@@ -53,6 +56,16 @@ var page = {
     renderSeckill: function() {
         var  seckillHtml = _mm.renderHtml(templateSeckill);
         $('.slider_wrapper').html(seckillHtml);
+    },
+    loadTv:function(){
+            _product.getIndexTv(function(res){
+                    listHtml= _mm.renderHtml(templateTv,{
+                        list : res.list
+                    });
+                    $('#floor1').html(listHtml);
+            },function(err){
+                _mm.errorTips(err);
+            });
     },
 };
 
