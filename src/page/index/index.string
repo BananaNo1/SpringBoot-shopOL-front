@@ -8,7 +8,8 @@
          </div>
          
        <!--   <span class="floor-text">{{name}}</span> -->
-         <a href=""><em>{{name}}</em></a>
+        <!--  <a href=""><em>{{name}}</em></a> -->
+         <em>{{name}}</em>
      </a>                  	
  </li>
  {{/list}}

@@ -16,6 +16,8 @@ var page = {
         this.countDown();
         this.renderSeckill();
         this.loadTv();
+        this.loadBook();
+        this.loadLipstick();
     },
     slider: function() {
         var bannerHtml = _mm.renderHtml(templateBanner);
@@ -67,6 +69,26 @@ var page = {
                 _mm.errorTips(err);
             });
     },
+    loadBook:function(){
+        _product.getIndexBook(function(res){
+                listHtml= _mm.renderHtml(templateTv,{
+                        list : res.list
+                    });
+                    $('#floor2').html(listHtml);
+        },function(err){
+             _mm.errorTips(err);
+        });
+    },
+    loadLipstick:function(){
+        _product.getIndexLipstick(function(res){
+                listHtml= _mm.renderHtml(templateTv,{
+                        list : res.list
+                    });
+                    $('#floor3').html(listHtml);
+        },function(err){
+             _mm.errorTips(err);
+        });
+    }
 };
 
 $(function() {
