@@ -1,15 +1,20 @@
  {{#list}}
  <li class="floor-item">
-     <a href="./list.html?categoryId={{categoryId}}">
+     <a href="./detail.html?productId={{id}}">
          <!-- <span class="floor-text">{{name}}</span> -->
          <!--  -->
          <div>
          	<img class="floor-img" src="http://image.51wustzds.com/{{mainImage}}" alt="{{name}}" />
          </div>
-         
        <!--   <span class="floor-text">{{name}}</span> -->
         <!--  <a href=""><em>{{name}}</em></a> -->
-         <em>{{name}}</em>
+        <div>
+        	 <em>{{name}}</em>
+        </div>
+        <div>
+        	<span>价格：{{price}}</span>
+        </div>
+         
      </a>                  	
  </li>
  {{/list}}

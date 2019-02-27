@@ -31,6 +31,8 @@ var config = {
       'user-center-update':['./src/page/user-center-update/index.js'],
       'user-register-info':['./src/page/user-register-info/index.js'],
       'validate-code' : ['./src/page/validate-code/index.js'],
+      'detail':['./src/page/detail/index.js'],
+      'list':['./src/page/list/index.js'],
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -84,6 +86,8 @@ var config = {
               new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
               new HtmlWebpackPlugin(getHtmlConfig('validate-code','验证')),
               new HtmlWebpackPlugin(getHtmlConfig('user-register-info','注册用户信息')),
+              new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
+              new HtmlWebpackPlugin(getHtmlConfig('list','商品列表')),
     ],
     optimization: {
             splitChunks : {
