@@ -1,8 +1,8 @@
 /*
 * @Author: lei
 * @Date:   2019-01-25 11:05:35
-* @Last Modified by:   lei
-* @Last Modified time: 2019-01-25 13:55:12
+* @Last Modified by:   banana
+* @Last Modified time: 2019-03-17 11:47:24
 */
 require('./index.css');
 require('page/common/nav/index.js');
@@ -15,6 +15,7 @@ var  templateIndex = require('./index.string');
 var page = {
 	init : function(){
 		this.onLoad();
+		this.bindEvent();
 	},
 	onLoad : function(){
 		navSide.init({
@@ -28,7 +29,7 @@ var page = {
 		$(document).on('click','.btn-submit',function(){
 			var userInfo = {
 				phone 	: 	$.trim($('#phone').val()),
-				email   :   $.trim($('#question').val()),
+				username   :   $.trim($('#username').val())
 			},
 			validateResult = _this.validateForm(userInfo);
 			if(validateResult.status){
@@ -47,6 +48,7 @@ var page = {
 			var  userHtml = '';
 			_user.getUserInfo(function(res){
 				userHtml = _mm.renderHtml(templateIndex,res);
+				$('.panel-body').html(userHtml);
 			},function(errMsg){
 				 _mm.errorTips(errMsg);
 			});
@@ -60,10 +62,10 @@ var page = {
 		  		result.msg='手机号格式不正确';
 		  		return result;
 		  }
-		  if(!_mm.validate('email',formData.email)){
-		  		result.msg='邮箱格式不正确';
-		  		return result;
-		  }
+		  // if(!_mm.validate('email',formData.email)){
+		  // 		result.msg='邮箱格式不正确';
+		  // 		return result;
+		  // }
 		  result.status = true;
 		  result.msg = '验证通过';
 		  return result;

@@ -66,7 +66,8 @@ var page = {
                     });
                     $('#floor1').html(listHtml);
             },function(err){
-                _mm.errorTips(err);
+                // _mm.errorTips(err);
+                $('#floor1').html('<div class="banner-con"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i><span class="sr-only">Loading...</span></div>');
             });
     },
     loadBook:function(){
@@ -76,7 +77,7 @@ var page = {
                     });
                     $('#floor2').html(listHtml);
         },function(err){
-             _mm.errorTips(err);
+                $('#floor2').html('<div class="banner-con"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i><span class="sr-only">Loading...</span></div>');
         });
     },
     loadLipstick:function(){
@@ -86,7 +87,7 @@ var page = {
                     });
                     $('#floor3').html(listHtml);
         },function(err){
-             _mm.errorTips(err);
+                $('#floor3').html('<div class="banner-con"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i><span class="sr-only">Loading...</span></div>');
         });
     }
 };

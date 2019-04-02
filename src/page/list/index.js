@@ -1,8 +1,8 @@
 /*
  * @Author: lei
  * @Date:   2019-02-27 15:48:55
- * @Last Modified by:   lei
- * @Last Modified time: 2019-03-01 16:03:53
+ * @Last Modified by:   banana
+ * @Last Modified time: 2019-03-10 20:21:36
  */
 require('./index.css');
 require('page/common/nav/index.js');
@@ -65,11 +65,12 @@ var page = {
             listParam = this.data.listParam,
             $pListCon = $('.p-list-con');
         $pListCon.html('<div class="loading"></div>');
-        listParam.categoryId ? (delete listParam.keyword) : (delete listParam.categoryId);
+        listParam.categoryId ? (delete listParam.keyword) :
+         (delete listParam.categoryId);
 
         _product.getProductList(listParam, function(res) {
             listHtml = _mm.renderHtml(templateIndex, {
-                list: res.list
+                list: res.list || res
             });
             $pListCon.html(listHtml);
             _this.loadPagination({
@@ -79,12 +80,22 @@ var page = {
                 nextPage: res.nextPage,
                 pageNum: res.pageNum,
                 pages: res.pages
-
             });
         }, function(errMsg) {
             _mm.errorTips(errMsg);
             _this.loadList();
         });
+    },
+    loadPagination : function(pageInfo){
+        var _this = this;
+        this.pagination ? '' : (this.pagination = new Pagination());
+        this.pagination.render($.extend({}, pageInfo, {
+            container : $('.pagination'),
+            onSelectPage : function(pageNum){
+                _this.data.listParam.pageNum = pageNum;
+                _this.loadList();
+            }
+        }));
     }
 };
 $(function() {

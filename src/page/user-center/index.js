@@ -1,8 +1,8 @@
 /*
 * @Author: lei
 * @Date:   2019-01-15 16:41:58
-* @Last Modified by:   lei
-* @Last Modified time: 2019-01-25 10:41:01
+* @Last Modified by:   banana
+* @Last Modified time: 2019-03-16 11:19:54
 */
 require('./index.css');
 require('page/common/nav/index.js');
@@ -26,6 +26,7 @@ var page = {
 			var userHtml = '';
 			_user.getUserInfo(function(res){
 				userHtml = _mm.renderHtml(templateIndex,res);
+				$('.panel-body').html(userHtml);
 			},function(errMsg){
 				_mm.errorTips(errMsg);
 			});

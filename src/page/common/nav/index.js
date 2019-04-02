@@ -1,8 +1,8 @@
 /*
 * @Author: lei
 * @Date:   2019-01-09 17:25:54
-* @Last Modified by:   lei
-* @Last Modified time: 2019-01-29 16:30:08
+* @Last Modified by:   banana
+* @Last Modified time: 2019-03-12 10:16:37
 */
 
 
@@ -16,7 +16,7 @@ var nav = {
 	init : function(){
 		this.bindEvent();
 		this.localUserInfo();
-		// this.loadCartCount();
+		this.loadCartCount();
 		return this;
 	},
 	bindEvent : function(){

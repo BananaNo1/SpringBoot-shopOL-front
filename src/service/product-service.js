@@ -1,8 +1,8 @@
 /*
  * @Author: lei
  * @Date:   2019-02-21 15:51:39
- * @Last Modified by:   lei
- * @Last Modified time: 2019-02-27 09:50:20
+ * @Last Modified by:   banana
+ * @Last Modified time: 2019-03-10 19:53:30
  */
 
 var _mm = require('util/mm.js');
@@ -38,6 +38,14 @@ var _product = {
             },
             success: resolve,
             error: reject
+        });
+    },
+    getProductList : function(listParam,resolve,reject){
+        _mm.request({
+            url :   _mm.getServerUrl('/product/list'),
+            data:   listParam,
+            success:resolve,
+            error:  reject
         });
     }
 

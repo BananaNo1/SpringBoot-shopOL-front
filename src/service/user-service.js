@@ -1,8 +1,8 @@
 /*
 * @Author: lei
 * @Date:   2019-01-10 10:05:54
-* @Last Modified by:   lei
-* @Last Modified time: 2019-01-29 17:30:48
+* @Last Modified by:   banana
+* @Last Modified time: 2019-03-17 22:45:43
 */
 
 var _mm = require('util/mm.js');
@@ -69,7 +69,7 @@ var _user = {
 		},
 		getUserInfo : function(resolve,reject){
 				_mm.request({
-					url  		: 	_mm.getServerUrl('/user/getInformation'),
+					url  		: 	_mm.getServerUrl('/user/getUserInformation'),
 					method  	: 	'POST',
 					success 	:   resolve,
 					error 		:   reject
@@ -91,7 +91,25 @@ var _user = {
 				success : resolve,
 				error : reject
 			});
-		}
+		},
+		updateUserInfo : function(userInfo,resolve,reject){
+			_mm.request({
+				url:_mm.getServerUrl('/user/updateInformation'),
+				data:userInfo,
+				method:'POST',
+				success:resolve,
+				error:reject
+			});
+		},
+		updatePassword :function(userInfo,resolve,reject){
+			_mm.request({
+				url:_mm.getServerUrl('/user/updatePassword'),
+				data:userInfo,
+				method:'POST',
+				success:resolve,
+				error:reject
+			});
+		},
 		
 };
 
