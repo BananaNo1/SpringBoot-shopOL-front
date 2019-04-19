@@ -2,7 +2,7 @@
  * @Author: lei
  * @Date:   2019-02-27 15:48:55
  * @Last Modified by:   banana
- * @Last Modified time: 2019-03-10 20:21:36
+ * @Last Modified time: 2019-04-07 14:14:26
  */
 require('./index.css');
 require('page/common/nav/index.js');
@@ -82,7 +82,7 @@ var page = {
                 pages: res.pages
             });
         }, function(errMsg) {
-            _mm.errorTips(errMsg);
+            $pListCon.html('<div class="loading"></div>');
             _this.loadList();
         });
     },

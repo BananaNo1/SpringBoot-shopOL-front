@@ -1,8 +1,8 @@
 /*
 * @Author: lei
 * @Date:   2019-01-10 11:17:46
-* @Last Modified by:   lei
-* @Last Modified time: 2019-01-10 11:29:23
+* @Last Modified by:   banana
+* @Last Modified time: 2019-04-18 17:18:13
 */
 
 require('./index.css');
@@ -19,6 +19,14 @@ var header = {
 		if(keyword){
 			$('#search-input').val(keyword);
 		}
+
+		// 输入会车后，做搜索提交
+        $('#search-input').keyup(function(e){
+            // 13是回车键的keyCode
+            if(e.keyCode === 13){
+                _this.searchSubmit();
+            }
+        });
 	},
 	bindEvent :  function(){
 		var _this = this;

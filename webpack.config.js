@@ -65,8 +65,8 @@ var config = {
                   use: "css-loader"
               })
               },
-              { test: /\.string$/, loader: 'html-loader'},
               { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=/resource/[name].[ext]' },
+              { test: /\.string$/, loader: 'html-loader'},
             /* {
                   test: /\.css$/,
                   　　     use: [
