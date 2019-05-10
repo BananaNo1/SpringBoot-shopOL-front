@@ -38,6 +38,7 @@ var config = {
       'order-list':['./src/page/order-list/index.js'],
       'order-detail':['./src/page/order-detail/index.js'],
       'payment':['./src/page/payment/index.js'],
+      'about':['./src/page/about/index.js'],
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -98,6 +99,7 @@ var config = {
               new HtmlWebpackPlugin(getHtmlConfig('order-list','订单列表')),
               new HtmlWebpackPlugin(getHtmlConfig('order-detail','订单详情')),
               new HtmlWebpackPlugin(getHtmlConfig('payment','支付')),
+              new HtmlWebpackPlugin(getHtmlConfig('about','关于商城')),
     ],
     optimization: {
             splitChunks : {
